@@ -1,5 +1,4 @@
 import { Button, Box } from '@mui/material'
-import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const footerStyle = {
@@ -16,6 +15,7 @@ const btnStyle = {
 
 function Footer() {
   const navigate = useNavigate();
+
   return (
     <Box sx={footerStyle}>
       <Button variant='contained' onClick={() => navigate("/")}>Home</Button>
