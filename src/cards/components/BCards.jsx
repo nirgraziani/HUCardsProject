@@ -1,5 +1,7 @@
-import BCard from "./BCard";
+import BCard from "./BCards";
 import { Box, Typography } from "@mui/material";
+
+
 function BCards({ cards }) {
   if (cards.length === 0) {
     return (
