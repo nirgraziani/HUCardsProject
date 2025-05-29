@@ -5,6 +5,7 @@ import MyCardPage from '../Pages/MyCardPage'
 import AboutPage from '../Pages/AboutPage'
 import LoginPage from '../Pages/LoginPage'
 import RegisterPage from '../Pages/RegisterPage'
+import SandboxPage from '../pages/SandboxPage'
 import ErrorPage from '../pages/ErrorPage'
 
 function Router() {
@@ -16,6 +17,7 @@ function Router() {
         <Route path='/about' element={<AboutPage/>}/>
         <Route path='/login' element={<LoginPage/>}/>
         <Route path='/register' element={<RegisterPage/>}/>
+        <Route path='/sandbox' element={<SandboxPage/>}/>
         <Route path='/*' element={<ErrorPage/>}/>
     </Routes>
   )

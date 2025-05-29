@@ -12,6 +12,7 @@ function Header() {
            <HeaderLink link={ROUTES.about} Label={"About"}/>
            <HeaderLink link={ROUTES.login} Label={"Login"}/>
            <HeaderLink link={ROUTES.register} Label={"Register"}/>
+           <HeaderLink link={ROUTES.sandbox} Label={"Sandbox"}/>
           </Toolbar>
     </AppBar>
 )

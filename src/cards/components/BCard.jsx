@@ -1,20 +1,26 @@
-import Card from '@mui/material/Card';
-import CardMedia from '@mui/material/CardMedia';
-import BCardBody from './BCardBody';
-import BCardActions from './BCardActions';
+import { Card, CardMedia } from "@mui/material";
+import BCardBody from "./BCardBody";
+import BCardActions from "./BCardActions";
 
-function BCard() {
+function BCard({ card }) {
+  console.log(card)
   return (
- <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 300, mx: 2 }}>
       <CardMedia
-        component="img"
-        alt="green iguana"
-        height="140"
-        image="/static/images/cards/contemplative-reptile.jpg"
+        sx={{ height: 140 }}
+        image={card.image.url}
+        title="Businees logo"
       />
-      <BCardBody/>
-      <BCardActions/>
-    </Card>  )
+      <BCardBody
+        title={card.title}
+        subtitle={card.subtitle}
+        bizNumber={card.bizNumber}
+        phone={card.phone}
+        city={card.address.city}
+      />
+      <BCardActions />
+    </Card>
+  );
 }
 
-export default BCard
+export default BCard;

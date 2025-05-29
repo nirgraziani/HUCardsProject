@@ -1,4 +1,4 @@
-import BCard from "./BCards";
+import BCard from "./BCard";
 import { Box, Typography } from "@mui/material";
 
 
@@ -12,7 +12,7 @@ function BCards({ cards }) {
   }
   return (
     <Box sx={{ display: "flex" }}>
-      {cards.map((card) => (
+    {cards.map((card) => (
         <BCard key={card._id} card={card} />
       ))}
     </Box>

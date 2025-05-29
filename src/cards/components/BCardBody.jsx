@@ -1,19 +1,20 @@
-import React from 'react'
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
+import { CardContent, Divider, Typography } from "@mui/material";
 
-function BCardBody() {
+function BCardBody({ title, subtitle, phone, city, bizNumber }) {
   return (
     <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
-        </Typography>
-        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
-      </CardContent>
-  )
+      <Typography variant="h5">{title}</Typography>
+      <Typography variant="h6">{subtitle}</Typography>
+      <Divider sx={{ marginY: 1 }} />
+      <Typography variant="body2">
+        <strong>Phone:</strong> {phone}
+      </Typography>
+      <Typography variant="body2">
+        <strong>Address:</strong> {city}
+      </Typography>
+      <Typography variant="body2">Card Number: {bizNumber}</Typography>
+    </CardContent>
+  );
 }
 
-export default BCardBody
+export default BCardBody;
