@@ -1,28 +1,9 @@
 import { Box, Typography, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
+import useCountries from "./hooks/useCountries";
 function CardsPage() {
-  const [allCountries, setAllCountries] = useState([]);
-  const [countries, setCountries] = useState([]);
+  const {countries, handleInputChange} = useCountries()
 
-
-  const getCountries = async () => {
-    const respone = await fetch("https://restcountries.com/v3.1/all")
-    const json = await respone.json();
-    setAllCountries(json.slice(0, 20));
-    setCountries(json.slice(0, 20));
-}
-
-  useEffect(() => {
-    getCountries()
-  }, []);
-
-  const handleInputChange = (event) => {
-    const value = event.target.value.toLowerCase();
-    const filtered = allCountries.filter((country) => {
-      return country.name.common.toLowerCase().includes(value)
-    })
-      setCountries(filtered);
-  }
 
   return (
     <Box sx={{display: 'flex', gap: "10px"}}>
@@ -38,7 +19,7 @@ function CardsPage() {
       )
     })}
       </Box>
-      <Box >
+      <Box sx={{"marginTop": "10px"}}>
         <TextField onChange={handleInputChange} id="outlined-basic" label="Outlined" variant="outlined" />
       </Box>
     </Box>
