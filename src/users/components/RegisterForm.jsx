@@ -1,31 +1,40 @@
 import { Button, Container, TextField } from '@mui/material'
+import Joi from 'joi';
 import React, { useState } from 'react'
+import useForm from '../../hooks/useForm';
 
 function RegisterForm() {
-    const [userDetails, setUserDetails] = useState({
-        firstName: "",
-        lastName: "",
-        middleName: ""
-    });
 
-    const handleChange = (e) => {
-        setUserDetails((prev) => ({
-            ...prev,
-            firstName: e.target.value
-         }))
-    }
-    const handleSubmit = () => {
-        console.log(userDetails)
- }
+    const { formDetails, errors, handleChange, handleSubmit } = useForm({ firstName: "", middleName: "", lastName: "" },
+        {firstName: Joi.string().min(2).max(12),
+        middleName: Joi.string().optional(),
+        lastName: Joi.string().min(2).max(12).required()})
 
+
+   
   return (
       <div>
           <Container sx={{
               pt: 2,
           }}>    
-            <TextField label={"First Name"} onChange={handleChange}/>
-            <TextField label={"Middle Name"} />
-            <TextField label={"Last Name"} />
+              <TextField label={"First Name"}
+                  name='firstName'
+                  onChange={handleChange}
+                  error={Boolean(errors.firstName)}
+                  helperText={errors.firstName}
+              />
+              <TextField label={"Middle Name"}
+                  name='middleName'
+                  onChange={handleChange}
+                  error={Boolean(errors.middleName)}
+                  helperText={errors.middleName}
+              />
+              <TextField label={"Last Name"}
+                  name='lastName'
+                  onChange={handleChange}
+                  error={Boolean(errors.lastName)}
+                  helperText={errors.lastName}
+              />
               
             <Button variant='contained' sx={{display: "block"}} onClick={handleSubmit}>
                  Register
