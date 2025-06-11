@@ -9,6 +9,7 @@ function Header() {
       <AppBar position='sticky' color='primary' elevation={10}>
           <Toolbar>
            <HeaderLink link={ROUTES.favorite} Label={"Favorite"}/>
+           <HeaderLink link={ROUTES.addCard} Label={"Add Card"}/>
            <HeaderLink link={ROUTES.about} Label={"About"}/>
            <HeaderLink link={ROUTES.login} Label={"Login"}/>
            <HeaderLink link={ROUTES.register} Label={"Register"}/>

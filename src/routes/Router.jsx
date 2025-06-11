@@ -1,12 +1,13 @@
 import {Route, Routes} from "react-router-dom"
-import CardPage from '../Pages/CardPage'
+import CardPage from '../pages/CardPage'
 import FavoriteCardPage from '../Pages/FavoriteCardPage'
 import MyCardPage from '../Pages/MyCardPage'
 import AboutPage from '../Pages/AboutPage'
-import LoginPage from '../Pages/LoginPage'
-import RegisterPage from '../Pages/RegisterPage'
+import LoginPage from '../pages/LoginPage'
+import RegisterPage from '../pages/RegisterPage'
 import SandboxPage from '../pages/SandboxPage'
 import ErrorPage from '../pages/ErrorPage'
+import AddCardPage from "../pages/AddCardPage"
 
 function Router() {
   return (
@@ -14,6 +15,7 @@ function Router() {
         <Route path='/' element={<CardPage/>}/>
         <Route path='/favorite' element={<FavoriteCardPage/>}/>
         <Route path='/my-cards' element={<MyCardPage/>}/>
+        <Route path='/add-card' element={<AddCardPage/>}/>
         <Route path='/about' element={<AboutPage/>}/>
         <Route path='/login' element={<LoginPage/>}/>
         <Route path='/register' element={<RegisterPage/>}/>

@@ -3,11 +3,13 @@ import Joi from "joi";
 
 
 
-export default function  useForm(initialForm, scheme) {
+export default function  useForm(initialForm, validationSchema) {
      const [formDetails, setUserDetails] = useState(initialForm);
      const  [errors, setErrors] = useState({});
 
+    const fullSchema = Joi.object(validationSchema);
     
+
         const handleChange = (e) => {
             const fieldName = e.target.name
             const fieldValue = e.target.value
@@ -22,7 +24,7 @@ export default function  useForm(initialForm, scheme) {
                 [fieldName]: fieldValue
             };
     
-            const { error } = scheme.validate(updatedDetails, { abortEarly: false })
+            const { error } = fullSchema.validate(updatedDetails, { abortEarly: false })
             console.log(error.details)
             if (error) {
                 const fieldErrors = {};
