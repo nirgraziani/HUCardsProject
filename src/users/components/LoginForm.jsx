@@ -1,7 +1,7 @@
 import { Button, Container, TextField } from '@mui/material'
 import Joi from 'joi';
-import React, { useState } from 'react'
 import useForm from '../../hooks/useForm';
+import Form from '../../components/Form';
 
 function LoginForm() {
 
@@ -23,18 +23,20 @@ function LoginForm() {
    
   return (
       <div>
-          <Container sx={{
-              pt: 2,
-              display: "flex",
-              justifyContent: "center",
-              flexDirection: "column",
-              gap: "20px"
-          }}>    
+          <Form
+          onSubmit={handleSubmit}
+          onReset={() => { }}
+          title={"Sign up form"}
+          spacing={3}
+          styles={{maxWidth: "880px", display: "flex", flexDirection: "column", justifyContent: "center"}}
+        >     
               <TextField label={"E-mail"}
                   name='email'
                   onChange={handleChange}
                   error={Boolean(errors.email)}
                   helperText={errors.email}
+                  value={formDetails.firstName}
+                  sm={6}
               />
               <TextField label={"Password"}
                   name='password'
@@ -42,12 +44,14 @@ function LoginForm() {
                   onChange={handleChange}
                   error={Boolean(errors.password)}
                   helperText={errors.password}
+                  value={formDetails.password}
+                  sm={6}
               />
               
             <Button variant='contained' sx={{display: "block"}} onClick={handleSubmit}>
                  Login
             </Button>
-          </Container>
+          </Form>
     </div>
   )
 }

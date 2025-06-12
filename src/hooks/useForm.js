@@ -25,7 +25,7 @@ export default function  useForm(initialForm, validationSchema) {
             };
     
             const { error } = fullSchema.validate(updatedDetails, { abortEarly: false })
-            console.log(error.details)
+            console.log(error)
             if (error) {
                 const fieldErrors = {};
                 error.details.forEach(err => {
@@ -40,7 +40,7 @@ export default function  useForm(initialForm, validationSchema) {
     
         const handleSubmit = () => {
             console.log(formDetails)
-            const {error} = scheme.validate(formDetails, {abortEarly: false})
+            const {error} = fullSchema.validate(formDetails, {abortEarly: false})
             console.log(error)
         }
     
