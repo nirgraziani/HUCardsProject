@@ -18,7 +18,6 @@ function BCard({ card }) {
         phone={card.phone}
         city={card.address.city}
       />
-      <BCardActions />
     </Card>
   );
 }

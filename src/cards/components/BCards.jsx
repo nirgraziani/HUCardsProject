@@ -1,6 +1,16 @@
 import BCard from "./BCard";
 import { Box, Typography } from "@mui/material";
 
+const cardStyle = {
+  maxWidth: "1200px",
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "center",
+  flexWrap: "wrap",
+  gap: "10px",
+  position: "relative",
+  top: "20px"
+}
 
 function BCards({ cards }) {
   if (cards.length === 0) {
@@ -11,8 +21,8 @@ function BCards({ cards }) {
     );
   }
   return (
-    <Box sx={{ display: "flex" }}>
-    {cards.map((card) => (
+    <Box sx={cardStyle}>
+      {cards.map((card) => (
         <BCard key={card._id} card={card} />
       ))}
     </Box>

@@ -12,42 +12,45 @@ const Form = ({
     color = "inherit",
     spacing = 1,
     styles = {},
-    children
+    children,
+    isLogin = false
 }) => {
     const navigate = useNavigate();
-    
-  return (
-      <Box
-          component="form"
-          color={color}
-          sx={{ mt: 2, p: { xs: 1, sm: 2 }, ...styles }}
-          onSubmit={onSubmit}
-          autoComplete="off"
-          noValidate
-      >
-          <Typography align="center" variant="h5" component="h1" mb={2}>
-              {title.toUpperCase()}
-          </Typography>
 
-          <Grid container spacing={spacing} sx={{display: "flex", justifyContent: "center"}}>
-              {children}
-          </Grid>
+    return (
+        <Box
+            component="form"
+            color={color}
+            sx={{ mt: 2, p: { xs: 1, sm: 2 }, ...styles }}
+            onSubmit={onSubmit}
+            autoComplete="off"
+            noValidate
+        >
+            <Typography align="center" variant="h5" component="h1" mb={2}>
+                {title.toUpperCase()}
+            </Typography>
 
-          <Grid container spacing={2} my={2} direction="row" width="100" sx={{justifyContent: "center"}}>
-              <Grid item xs={12} sm={6}>
-                  <FormButton
-                      node={<LoopIcon />}
-                      varient="outlined"
-                      component='div'
-                      onClick={onReset}
-                  />
-              </Grid>
-              <Grid item xs={12}>
-                  <FormButton node="Submit" onClick={onSubmit} size='large'/>
-              </Grid>
-          </Grid>
-    </Box>
-  )
+            <Grid container spacing={spacing} sx={{ display: "flex", justifyContent: "center" }}>
+                {children}
+            </Grid>
+            {isLogin ? null :
+                <Grid container spacing={2} my={2} direction="row" width="100" sx={{ justifyContent: "center" }}>
+                    <Grid item xs={12} sm={6}>
+                        <FormButton
+                            node={<LoopIcon />}
+                            varient="outlined"
+                            component='div'
+                            onClick={onReset}
+                        />
+                    </Grid>
+                    <Grid item xs={12}>
+                        <FormButton node="Submit" onClick={onSubmit} size='large' />
+                    </Grid>
+                </Grid>
+
+            }
+        </Box>
+    )
 }
 
 export default Form

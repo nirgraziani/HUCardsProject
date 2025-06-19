@@ -1,0 +1,14 @@
+// jsconfig.json
+{
+    "compilerOptions": {
+        "baseUrl": ".", // Enable absolute imports
+        "paths": {
+            "@components/*": [
+                "src/components/*"
+            ] // Example alias
+        }
+    },
+    "include": [
+        "src"
+    ]
+}
