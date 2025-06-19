@@ -2,15 +2,18 @@ import { AppBar, Toolbar } from '@mui/material'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import HeaderLink from './HeaderLink'
+import ROUTES from '../../routes/routesDict'
 
 function Header() {
   return (
       <AppBar position='sticky' color='primary' elevation={10}>
           <Toolbar>
-           <HeaderLink link={"favorite"}/>
-           <HeaderLink link={"my-cards"}/>
-           <HeaderLink link={"login"}/>
-           <HeaderLink link={"register"}/>
+           <HeaderLink link={ROUTES.favorite} Label={"Favorite"}/>
+           <HeaderLink link={ROUTES.addCard} Label={"Add Card"}/>
+           <HeaderLink link={ROUTES.about} Label={"About"}/>
+           <HeaderLink link={ROUTES.login} Label={"Login"}/>
+           <HeaderLink link={ROUTES.register} Label={"Register"}/>
+           <HeaderLink link={ROUTES.sandbox} Label={"Sandbox"}/>
           </Toolbar>
     </AppBar>
 )

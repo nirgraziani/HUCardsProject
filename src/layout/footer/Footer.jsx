@@ -1,6 +1,6 @@
 import { Button, Box } from '@mui/material'
-import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import ROUTES from "../../routes/routesDict"
 
 const footerStyle = {
   "display": "flex",
@@ -16,10 +16,11 @@ const btnStyle = {
 
 function Footer() {
   const navigate = useNavigate();
+
   return (
     <Box sx={footerStyle}>
-      <Button variant='contained' onClick={() => navigate("/")}>Home</Button>
-      <Button sx={btnStyle} variant='contained' onClick={() => navigate("/about")}>About</Button>
+      <Button variant='contained' onClick={() => navigate(ROUTES.root)}>Home</Button>
+      <Button sx={btnStyle} variant='contained' onClick={() => navigate(ROUTES.about)}>About</Button>
     </Box>
   )
 }

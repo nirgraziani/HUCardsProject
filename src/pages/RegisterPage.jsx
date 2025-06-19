@@ -1,8 +1,15 @@
 import React from 'react'
+import RegisterForm from '../users/components/RegisterForm'
+import { Box } from '@mui/material'
 
 function RegisterPage() {
   return (
-    <div>RegisterPage</div>
+    <Box sx={{display: "flex",
+    justifyContent: "center",
+    alignItems: "flex start"}}
+    >
+      <RegisterForm/>
+    </Box>
   )
 }
 

@@ -1,5 +1,4 @@
 import { Box, Button } from '@mui/material'
-import React from 'react'
 import { Link } from 'react-router-dom'
 
 const btnStyle = {
@@ -11,12 +10,12 @@ const linkStyle = {
     "color": "white"
 }
 
-function HeaderLink({link}) {
+function HeaderLink({link, Label}) {
   return (
       <>
           <Box>
               <Button sx={btnStyle} variant='contained' color='success'>
-                    <Link style={linkStyle} to={`/${link}`}>{link}</Link>
+                    <Link style={linkStyle} to={`${link}`}>{Label}</Link>
               </Button>
           </Box>
       </>
